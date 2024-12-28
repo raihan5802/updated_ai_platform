@@ -1,0 +1,73 @@
+/* frontend/src/styles/ProjectManagerTaskDetails.css */
+
+/* Container for the Task Details page */
+.pm-task-details-container {
+    padding: 30px;
+    background: var(--light-bg);
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--dark-gray);
+}
+
+/* Title / Heading */
+.pm-task-details-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+/* Section that shows main task info */
+.task-info {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.task-info p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Assigned files section */
+.assigned-files {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.assigned-files h4 {
+    margin-bottom: 15px;
+}
+
+/* Error message styling */
+.error {
+    color: var(--error-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Button styling */
+.pm-task-details-container button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    margin-top: 10px;
+}
+
+.pm-task-details-container button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.pm-task-details-container button:active {
+    transform: translateY(0);
+}

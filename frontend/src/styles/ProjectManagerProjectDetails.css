@@ -1,0 +1,104 @@
+/* frontend/src/styles/ProjectManagerProjectDetails.css */
+
+.pm-project-details-container {
+    padding: 30px;
+    background: var(--light-bg);
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--dark-gray);
+}
+
+.pm-project-details-container h2 {
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+.details-section {
+    background: var(--white);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.details-section h4 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* File tree styling */
+ul {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+li {
+    margin: 4px 0;
+    font-size: 1rem;
+}
+
+li::before {
+    content: '• ';
+    color: var(--primary-color);
+}
+
+button {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    margin-top: 20px;
+}
+
+button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.error {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Example CSS for collapsible tree */
+/* frontend/src/styles/ProjectManagerProjectDetails.css (or a separate .css file) */
+
+.file-tree {
+    list-style: none;
+    padding-left: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+.tree-item {
+    margin: 4px 0;
+}
+
+/* So the arrow/folder is clickable */
+.folder-toggle {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.folder-arrow {
+    display: inline-block;
+    width: 1rem;
+    text-align: center;
+}
+
+.file-item .file-icon {
+    margin-right: 5px;
+}
+
+.directory-item .folder-icon {
+    margin-left: 3px;
+}

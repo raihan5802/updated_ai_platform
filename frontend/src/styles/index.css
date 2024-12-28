@@ -1,0 +1,82 @@
+/* frontend/src/styles/index.css */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables for Consistent Theming */
+:root {
+  --primary-color: #1ABC9C; /* Teal */
+  --accent-color: #16A085;  /* Dark Teal */
+  --background-gradient: linear-gradient(135deg, #1ABC9C, #16A085);
+  --light-bg: #ECF0F1;      /* Light Gray */
+  --white: #FFFFFF;
+  --light-gray: #BDC3C7;    /* Light Gray */
+  --medium-gray: #95A5A6;   /* Medium Gray */
+  --dark-gray: #2C3E50;     /* Dark Gray */
+  --error-color: #E74C3C;    /* Red */
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Roboto Slab', serif;
+  --font-body: 'Roboto', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  background: var(--light-bg);
+  color: var(--dark-gray);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark-gray);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}

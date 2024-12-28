@@ -1,0 +1,337 @@
+/* frontend/src/styles/ClientDashboard.css */
+
+/* Import CSS Variables from index.css */
+@import url('./index.css');
+
+/* Ensure the dashboard uses the entire viewport */
+.client-dashboard {
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-bg);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+/* Navbar Styling */
+.client-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+  transition: background-color var(--transition-speed);
+}
+
+.client-navbar:hover {
+  background-color: var(--accent-color);
+}
+
+.client-navbar h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: var(--font-heading);
+}
+
+/* Navbar Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+/* Buttons */
+.request-button,
+.logout-button {
+  background: var(--white);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.request-button:hover,
+.logout-button:hover {
+  background: var(--accent-color);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.request-button:active,
+.logout-button:active {
+  transform: translateY(0);
+}
+
+/* Main Content Area */
+.dashboard-content {
+  flex: 1;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Sections */
+.section {
+  background: var(--white);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+  margin-bottom: 20px;
+  color: var(--dark-gray);
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+}
+
+/* Styled Tables */
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  font-size: 1rem;
+  overflow-x: auto;
+}
+
+.styled-table thead {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 10px 10px 0 0;
+}
+
+.styled-table thead th {
+  padding: 15px 20px;
+  font-weight: 600;
+}
+
+.styled-table tbody tr {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: var(--light-gray);
+}
+
+.styled-table tbody tr:hover {
+  background-color: var(--medium-gray);
+  transform: translateY(-2px);
+}
+
+.styled-table tbody td {
+  padding: 15px 20px;
+  border-bottom: none;
+  position: relative;
+}
+
+.styled-table tbody td:last-child {
+  text-align: right;
+}
+
+/* Status Labels */
+.status-pending {
+  color: #FFA500; /* Orange */
+  font-weight: 600;
+}
+
+.status-accepted {
+  color: #28a745; /* Green */
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: var(--error-color); /* Red */
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Rejection Reason Icon */
+.rejection-reason-icon {
+  margin-left: 8px;
+  cursor: pointer;
+  transition: transform var(--transition-speed);
+}
+
+.rejection-reason-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 62, 80, 0.6); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+/* Modal Content */
+.modal-content {
+  background: var(--white);
+  padding: 30px 40px;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 95%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+  position: relative;
+}
+
+.modal-content h4 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: var(--dark-gray);
+  font-family: var(--font-heading);
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+
+.modal-content button.close-modal-button {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background var(--transition-speed), transform var(--transition-speed);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.modal-content button.close-modal-button:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.modal-content button.close-modal-button:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .client-navbar {
+    padding: 15px 30px;
+  }
+
+  .client-navbar h2 {
+    font-size: 1.6rem;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+
+  .dashboard-content {
+    padding: 25px 40px;
+  }
+
+  .section {
+    padding: 20px 25px;
+  }
+
+  .modal-content {
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .client-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .client-navbar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dashboard-content {
+    padding: 20px 25px;
+  }
+
+  .section {
+    padding: 15px 20px;
+  }
+
+  .styled-table {
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 20px 25px;
+  }
+}

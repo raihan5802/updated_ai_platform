@@ -1,0 +1,106 @@
+/* frontend/src/styles/ProjectManagerTask.css */
+
+.pm-add-task-container {
+    padding: 30px;
+    background: var(--light-bg);
+    min-height: 100vh;
+}
+
+.pm-add-task-container h2 {
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+    color: var(--dark-gray);
+}
+
+.task-form-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.task-form-section label {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.task-form-section input[type="date"],
+.task-form-section select,
+.task-form-section textarea {
+    margin-top: 5px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+}
+
+.task-files-section {
+    margin-top: 20px;
+}
+
+.file-tree,
+.folder-children {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+/* Each node in the tree */
+.tree-item {
+    margin: 4px 0;
+}
+
+.folder-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.folder-arrow {
+    display: inline-block;
+    width: 1rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* The checkboxes also clickable. We prevent toggling open on the checkbox. */
+.folder-header input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.folder-icon {
+    margin-left: 4px;
+}
+
+.file-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.file-icon {
+    margin-left: 4px;
+}
+
+/* Buttons */
+.task-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.task-buttons button {
+    padding: 10px 16px;
+    background: var(--primary-color);
+    border: none;
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-buttons button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
